@@ -28,15 +28,15 @@ char copyright[] = "DESCENT II  COPYRIGHT (C) 1994-1996 PARALLAX SOFTWARE CORPOR
 #include <sys/stat.h>
 #include <sys/types.h>
 #endif
-
-#ifdef __macosx__
+// wii edit: 
+//#ifdef __macosx__
 #	include "SDL/SDL_main.h"
 #	include "SDL/SDL_keyboard.h"
-#	include "FolderDetector.h"
-#else
-#	include "SDL_main.h"
-#	include "SDL_keyboard.h"
-#endif
+//#	include "FolderDetector.h"
+//#else
+//#	include "SDL_main.h"
+//#	include "SDL_keyboard.h"
+//#endif
 #include "descent.h"
 #include "u_mem.h"
 #include "strutil.h"
@@ -87,18 +87,18 @@ char copyright[] = "DESCENT II  COPYRIGHT (C) 1994-1996 PARALLAX SOFTWARE CORPOR
 #include "songs.h"
 
 extern int SDL_HandleSpecialKeys;
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 #	include <SDL/SDL.h>
 #	if USE_SDL_MIXER
-#		include <SDL_mixer/SDL_mixer.h>
+#		include <SDL/SDL_mixer.h>
 #	endif
-#else
-#	include <SDL.h>
-#	if USE_SDL_MIXER
-#		include <SDL_mixer.h>
-#	endif
-#endif
+//#else
+//#	include <SDL.h>
+//#	if USE_SDL_MIXER
+//#		include <SDL_mixer.h>
+//#	endif
+//#endif
 #include "vers_id.h"
 
 tGameOptions	gameOptions [2];
@@ -131,12 +131,12 @@ unsigned descent_critical_deverror = 0;
 unsigned descent_critical_errcode = 0;
 
 // ----------------------------------------------------------------------------
-
-#if defined (__unix__) || defined (__macosx__)
+// wii edit:
+//#if defined (__unix__) || defined (__macosx__)
 void D2SignalHandler (int nSignal)
-#else
-void __cdecl D2SignalHandler (int nSignal)
-#endif
+//#else
+//void __cdecl D2SignalHandler (int nSignal)
+//#endif
 {
 if (nSignal == SIGABRT)
 	PrintLog ("Abnormal program termination\n");

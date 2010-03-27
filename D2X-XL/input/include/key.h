@@ -16,12 +16,12 @@ COPYRIGHT 1993-1999 PARALLAX SOFTWARE CORPORATION.  ALL RIGHTS RESERVED.
 
 #include "pstypes.h"
 #include "fix.h"
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL_keysym.h>
-#else
-# include <SDL_keysym.h>
-#endif
+//#else
+//# include <SDL_keysym.h>
+//#endif
 
 //==========================================================================
 // This installs the int9 vector and initializes the keyboard in buffered

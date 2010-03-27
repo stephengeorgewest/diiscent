@@ -39,23 +39,25 @@
 #ifdef _WIN32
 #	include <windows.h>
 #	include <stddef.h>
+#else
+#	define GL_GLEXT_PROTOTYPES
 #endif
 
 #ifdef __macosx__
-#	include <OpenGL/glew.h>
 #	include <OpenGL/gl.h>
 #	include <OpenGL/glu.h>
+#	include <OpenGL/glext.h>
 #else
-#	ifdef __unix__
-#		include <GL/glew.h>
-#		include <GL/glxew.h>
-#		include <GL/glx.h>
-#	else
-#		include "glew.h"
-#		include "wglew.h"
-#	endif
 #	include <GL/gl.h>
 #	include <GL/glu.h>
+#	ifdef _WIN32
+#		include <glext.h>
+#		include <wglext.h>
+#	else
+#		include <GL/glext.h>
+#		include <GL/glx.h>
+#		include <GL/glxext.h>
+#	endif
 #endif
 
 #ifndef GL_VERSION_20

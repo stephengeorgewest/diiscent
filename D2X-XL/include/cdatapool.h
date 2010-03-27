@@ -7,13 +7,13 @@
 
 template < class _T > 
 class CDataPool {
-
-	template < class _U > 
+// wii edit: _U defined as a constant somewhere...
+	template < class _1U > 
 	class CPoolElem {
 		public:
 			int	prev;
 			int	next;
-			_U	data;
+			_1U	data;
 		};
 
 	class CPoolBuffer : public CArray< CPoolElem <_T> > {};

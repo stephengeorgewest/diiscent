@@ -13,15 +13,15 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #endif
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 #	include "SDL/SDL_main.h"
 #	include "SDL/SDL_keyboard.h"
-#	include "FolderDetector.h"
-#else
-#	include "SDL_main.h"
-#	include "SDL_keyboard.h"
-#endif
+//#	include "FolderDetector.h"
+//#else
+//#	include "SDL_main.h"
+//#	include "SDL_keyboard.h"
+//#endif
 #include "descent.h"
 #include "findfile.h"
 #include "u_mem.h"
@@ -66,18 +66,18 @@
 #include "hiresmodels.h"
 #include "soundthreads.h"
 #include "gameargs.h"
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 #	include <SDL/SDL.h>
 #	if USE_SDL_MIXER
 #		include <SDL_mixer/SDL_mixer.h>
 #	endif
-#else
-#	include <SDL.h>
-#	if USE_SDL_MIXER
-#		include <SDL_mixer.h>
-#	endif
-#endif
+//#else
+//#	include <SDL.h>
+//#	if USE_SDL_MIXER
+//#		include <SDL_mixer.h>
+//#	endif
+//#endif
 #include "vers_id.h"
 
 // ----------------------------------------------------------------------------

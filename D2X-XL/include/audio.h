@@ -24,14 +24,14 @@
 #		define USE_SDL_MIXER	0
 #	endif
 #endif
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL.h>
-# include <SDL_mixer/SDL_mixer.h>
-#else
-#	include <SDL.h>
-#  include <SDL_mixer.h>
-#endif
+# include <SDL/SDL_mixer.h>
+//#else
+//#	include <SDL.h>
+//#  include <SDL_mixer.h>
+//#endif
 
 #define USE_OPENAL	0
 

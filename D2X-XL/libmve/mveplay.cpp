@@ -7,7 +7,9 @@
 //#define DEBUG
 
 #include <string.h>
-#ifndef _WIN32
+// wii edit:
+#include<ogcsys.h>
+//#ifndef _WIN32
 #	include <errno.h>
 #	include <time.h>
 #	include <sys/time.h>
@@ -15,16 +17,16 @@
 #	include <sys/stat.h>
 #	include <fcntl.h>
 #	include <unistd.h>
-#else
-#	include <windows.h>
-#endif
+//#else
+//#	include <windows.h>
+//#endif
 
 #if defined (AUDIO)
-#	ifdef __macosx__
+//#	ifdef __macosx__
 #		include <SDL/SDL.h>
-#	else
-#		include <SDL.h>
-#	endif
+//#	else
+//#		include <SDL.h>
+//#	endif
 #endif
 
 #include "mvelib.h"
@@ -128,14 +130,14 @@ static int timer_created = 0;
 static int micro_frame_delay=0;
 static int timer_started=0;
 static struct timeval timer_expire = {0, 0};
-
-#if !HAVE_STRUCT_TIMESPEC
-struct timespec
-{
-	long int tv_sec;            /* Seconds.  */
-	long int tv_nsec;           /* Nanoseconds.  */
-};
-#endif
+//wii edit: should have ben set in conf.h
+//#if !HAVE_STRUCT_TIMESPEC
+//struct timespec
+//{
+//	long int tv_sec;            /* Seconds.  */
+//	long int tv_nsec;           /* Nanoseconds.  */
+//};
+//#endif
 
 //-----------------------------------------------------------------------
 
@@ -225,8 +227,8 @@ if (ts.tv_nsec < 0) {
 	}
 #ifdef _WIN32
 Sleep (ts.tv_sec * 1000 + ts.tv_nsec / 1000000);
-#else
-if (nanosleep (&ts, NULL) == -1  &&  errno == EINTR)
+#else //wii edit:nano sleep has one argument
+if (nanosleep (&ts) == -1  &&  errno == EINTR)
 	exit (1);
 #endif
 end:

@@ -15,12 +15,12 @@ COPYRIGHT 1993-1999 PARALLAX SOFTWARE CORPORATION.  ALL RIGHTS RESERVED.
 
 #ifndef _RBAUDIO_H
 #define _RBAUDIO_H
-
-#ifdef __macosx__
+//wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL.h>
-#else
-# include <SDL.h>
-#endif
+//#else
+//# include <SDL.h>
+//#endif
 
 #define RBA_MEDIA_CHANGED	-1
 

@@ -34,9 +34,11 @@ typedef unsigned int uint;
 typedef unsigned long ulong;
 #endif
 
-#if defined(_WIN32) || defined(__sun__) // platforms missing (u_)int??_t
-# include <SDL_types.h>
-#endif
+// wii edit: should SDL_types.h contain u_int32_t?
+//#if defined(_WIN32) || defined(__sun__) // platforms missing (u_)int??_t
+# include <SDL/SDL_types.h>
+typedef uint32_t	u_int32_t;
+//#endif
 #ifndef __MINGW32__
 #	if defined(_WIN32)// platforms missing int??_t
  		typedef Sint16 int16_t;
@@ -44,6 +46,8 @@ typedef unsigned long ulong;
  		typedef Sint64 int64_t;
 #	endif // defined(_WIN32)
 #endif
+// wii edit:
+typedef Uint64 u_int64_t;
 #if 1//ndef __MINGW32__
 #	if defined(_WIN32) || defined(__sun__) // platforms missing u_int??_t
  		typedef Uint16 u_int16_t;

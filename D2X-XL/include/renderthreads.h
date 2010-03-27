@@ -6,7 +6,7 @@
 #include "transprender.h"
 #include "particles.h"
 
-#include "SDL_mutex.h"
+#include "SDL/SDL_mutex.h"
 
 #define UNIFY_THREADS	0
 

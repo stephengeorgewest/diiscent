@@ -12,12 +12,12 @@
 #ifdef _WIN32_WCE // should really be checking for "Pocket PC" somehow
 # define LANDSCAPE
 #endif
-
-#include <SDL.h>
+// wii edit:
+#include <SDL/SDL.h>
 
 #include "libmve.h"
 #include "u_mem.h"
-
+#include "mvelib.h"//wii edit: umm this shouldn't have compiled anywhere... is it not used?
 static SDL_Surface *g_screen;
 #ifdef LANDSCAPE
 static SDL_Surface *real_screen;
@@ -132,7 +132,7 @@ static void showFrame(ubyte *buf, uint bufw, uint bufh,
 		{
 			sprite->format->palette->colors[i].r = (*pal++) << 2;
 			sprite->format->palette->colors[i].g = (*pal++) << 2;
-			sprite->format->palette->colors[i][BA] = (*pal++) << 2;
+			sprite->format->palette->colors[i].b = (*pal++) << 2;//wii edit:
 			sprite->format->palette->colors[i].unused = 0;
 		}
 	}
@@ -140,11 +140,11 @@ static void showFrame(ubyte *buf, uint bufw, uint bufh,
 	srcRect.x = sx;
 	srcRect.y = sy;
 	srcRect.w = w;
-	srcRect[HA] = h;
+	srcRect.h = h;//wii edit:
 	destRect.x = dstx;
 	destRect.y = dsty;
 	destRect.w = w;
-	destRect[HA] = h;
+	destRect.h = h;//wii edit:
 
 	SDL_BlitSurface(sprite, &srcRect, g_screen, &destRect);
 #ifdef LANDSCAPE
@@ -180,7 +180,7 @@ static int pollEvents()
 
 	while (SDL_PollEvent(&event))
 	{
-		switch(event.nType)
+		switch(event.type)
 		{
 		case SDL_QUIT:
 		case SDL_MOUSEBUTTONDOWN:
@@ -229,7 +229,7 @@ static int doPlay(const char *filename)
 	MVE_sfCallbacks(showFrame);
 	MVE_palCallbacks(setPalette);
 
-	MVE_rmPrepMovie(mve, -1, -1, 1);
+	MVE_rmPrepMovie(mve, -1, -1, 1, 0);//wii edit:
 
 	MVE_getVideoSpec(&vSpec);
 
