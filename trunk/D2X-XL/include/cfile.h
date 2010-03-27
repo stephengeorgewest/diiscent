@@ -125,9 +125,10 @@ class CFile {
 
 typedef struct tGameFolders {
 	char szHomeDir [FILENAME_LEN];
-#if defined (__unix__) || defined (__macosx__)
+// wii edit: 
+//#if defined (__unix__) || defined (__macosx__)
 	char szSharePath [FILENAME_LEN];
-#endif
+//#endif
 	char szGameDir [FILENAME_LEN];
 	char szDataDir [FILENAME_LEN];
 	char szDownloadDir [FILENAME_LEN];

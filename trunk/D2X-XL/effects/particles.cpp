@@ -10,12 +10,12 @@
 #ifdef HAVE_CONFIG_H
 #	include <conf.h>
 #endif
-
-#ifdef __macosx__
+// wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL.h>
-#else
-# include <SDL.h>
-#endif
+//#else
+//# include <SDL.h>
+//#endif
 
 #include "pstypes.h"
 #include "descent.h"

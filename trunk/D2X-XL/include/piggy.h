@@ -274,12 +274,12 @@ extern CHashTable soundNames [2];
 //extern int soundOffset [2][MAX_SOUND_FILES];
 
 #if USE_SDL_MIXER
-
-#	ifdef __macosx__
-#		include <SDL_mixer/SDL_mixer.h>
-#	else
-#		include <SDL_mixer.h>
-#	endif
+// wii edit:
+//#	ifdef __macosx__
+#		include <SDL/SDL_mixer.h>
+//#	else
+//#		include <SDL_mixer.h>
+//#	endif
 
 const char *AddonSoundName (int nSound);
 Mix_Chunk *LoadAddonSound (const char *pszSoundFile, ubyte* bBuiltIn = NULL);

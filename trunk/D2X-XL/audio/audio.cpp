@@ -81,12 +81,12 @@ static const ubyte mix8[] =
   0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
   0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 };
-
-#ifndef _WIN32
-void*					sndDevHandle;
-pthread_t			threadId;
-pthread_mutex_t	mutex;
-#endif
+// wii edit:
+//#ifndef _WIN32
+//void*					sndDevHandle;
+//pthread_t			threadId;
+//pthread_mutex_t	mutex;
+//#endif
 
 #define MAKE_WAV	0
 #if MAKE_WAV

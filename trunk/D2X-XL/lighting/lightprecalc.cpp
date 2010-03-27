@@ -26,7 +26,7 @@
 #include "dynlight.h"
 
 #if !USE_OPENMP
-#include "SDL_mutex.h"
+#include "SDL/SDL_mutex.h"//wii edit;
 
 static SDL_mutex* semaphore;
 #endif

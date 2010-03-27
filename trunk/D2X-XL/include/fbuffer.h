@@ -88,10 +88,11 @@ class CFBO {
 			}
 
 		inline void SetDrawBuffers (void) { 
-			if (m_info.nBufferCount == 1)
+			//wii edit:
+			//if (m_info.nBufferCount == 1)
 				glDrawBuffer (m_info.bufferIds [0]);
-			else
-				glDrawBuffers (m_info.nBufferCount, m_info.bufferIds); 
+			//else
+			//	glDrawBuffers (m_info.nBufferCount, m_info.bufferIds); 
 			}
 
 		int IsBound (void);

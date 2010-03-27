@@ -100,13 +100,13 @@ COPYRIGHT 1993-1999 PARALLAX SOFTWARE CORPORATION.  ALL RIGHTS RESERVED.
 #include "console.h"
 #include "vecmat.h"
 
-#ifdef __macosx__
+//#ifdef __macosx__
 # include <SDL/SDL.h>
 # include <SDL/SDL_thread.h>
-#else
-# include <SDL.h>
-# include <SDL_thread.h>
-#endif
+//#else
+//# include <SDL.h>
+//# include <SDL_thread.h>
+//#endif
 
 /**
  **	Constants
@@ -3499,11 +3499,11 @@ typedef struct tTransRotInfo {
 	fVector3D	fvTrans;
 	} __pack__ tTransRotInfo;
 
-#ifndef _WIN32
+//#ifndef _WIN32
 #	define WINAPI
 #	define HINSTANCE	int
 #	define HWND void *
-#endif
+//#endif
 
 typedef int (WINAPI *tpfnTIRInit) (HWND);
 typedef int (WINAPI *tpfnTIRExit) (void);

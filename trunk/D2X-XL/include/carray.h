@@ -28,12 +28,12 @@ void ArrayError (const char* pszMsg);
 
 template < class _T > 
 class CArray : public CQuickSort < _T > {
-
-	template < class _U > 
+// wii edit: _U defined as a constant somewhere...
+	template < class _1U > 
 	class CArrayData {
 		public:
-			_U		*buffer;
-			_U		null;
+			_1U		*buffer;
+			_1U		null;
 			uint	length;
 			uint	pos;
 			int	nMode;
@@ -409,11 +409,11 @@ class CFloatArray : public CArray<float> {};
 
 template < class _T, uint length > 
 class CStaticArray : public CArray < _T > {
-
-	template < class _U, uint _length > 
+// wii edit: _U defined as a constant somewhere...
+	template < class _1U, uint _length > 
 	class CStaticArrayData {
 		public:
-			_U		buffer [_length];
+			_1U		buffer [_length];
 			};
 
 	protected:

@@ -73,11 +73,12 @@ COPYRIGHT 1993-1999 PARALLAX SOFTWARE CORPORATION.  ALL RIGHTS RESERVED.
 #include "soundthreads.h"
 #include "sparkeffect.h"
 #include "createmesh.h"
-#ifdef __macosx__
+//wii edit:
+//#ifdef __macosx__
 #include "SDL/SDL_syswm.h"
-#else
-#include "SDL_syswm.h"
-#endif
+//#else
+//#include "SDL_syswm.h"
+//#endif
 #include "renderthreads.h"
 #include "collision_math.h"
 #include "banlist.h"

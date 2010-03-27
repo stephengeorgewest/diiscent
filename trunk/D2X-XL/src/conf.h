@@ -125,11 +125,10 @@ Joystick routines. */
 
 /* Define if you have the 
 mixer library */
-#define USE_
-MIXER 1
+#define USE_SDL_MIXER 1
 
 /* Version number of package */
-#define VERSION "1.5.178"
+//#define VERSION "1.5.178"
 
 /* Define to 1 if your processor stores words with the most significant byte
    first (like Motorola and SPARC, unlike Intel and VAX). */
