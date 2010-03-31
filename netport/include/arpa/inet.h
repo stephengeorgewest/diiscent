@@ -29,9 +29,9 @@ extern "C"
 int inet_aton (__const char *__cp, struct in_addr *__inp);
 in_addr_t    inet_addr(const char *);
 char        *inet_ntoa(struct in_addr);
-const char  *inet_ntop(int, const void *restrict, char *restrict,
+const char  *inet_ntop(int, const void *__restrict__, char *__restrict__,
                  socklen_t);
-int          inet_pton(int, const char *restrict, void *restrict);
+int          inet_pton(int, const char *__restrict__, void *__restrict__);
 int inet_aton(const char *cp, struct in_addr *inp);
 
 

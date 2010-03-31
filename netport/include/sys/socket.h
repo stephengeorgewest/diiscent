@@ -107,7 +107,7 @@ struct linger {
 #define SOCK_SEQPACKET  5
 #endif
 
-#define  SOL_SOCKET			0xfff    /* options for socket level */
+#define  SOL_SOCKET			0xffff    /* options for socket level */
 
 /*
  * Option flags per-socket.
@@ -173,16 +173,16 @@ struct linger {
 #define SHUT_RDWR 2
 #endif
 
-int     accept(int, struct sockaddr *restrict, socklen_t *restrict);
+int     accept(int, struct sockaddr *__restrict__, socklen_t *__restrict__);
 int     bind(int, const struct sockaddr *, socklen_t);
 int     connect(int, const struct sockaddr *, socklen_t);
-int     getpeername(int, struct sockaddr *restrict, socklen_t *restrict);
-int     getsockname(int, struct sockaddr *restrict, socklen_t *restrict);
-int     getsockopt(int, int, int, void *restrict, socklen_t *restrict);
+int     getpeername(int, struct sockaddr *__restrict__, socklen_t *__restrict__);
+int     getsockname(int, struct sockaddr *__restrict__, socklen_t *__restrict__);
+int     getsockopt(int, int, int, void *__restrict__, socklen_t *__restrict__);
 int     listen(int, int);
 ssize_t recv(int, void *, size_t, int);
-ssize_t recvfrom(int, void *restrict, size_t, int,
-        struct sockaddr *restrict, socklen_t *restrict);
+ssize_t recvfrom(int, void *__restrict__, size_t, int,
+        struct sockaddr *__restrict__, socklen_t *__restrict__);
 ssize_t recvmsg(int, struct msghdr *, int);
 ssize_t send(int, const void *, size_t, int);
 ssize_t sendmsg(int, const struct msghdr *, int);

@@ -65,14 +65,14 @@ void              endprotoent(void);
 void              endservent(void);
 void              freeaddrinfo(struct addrinfo *);
 const char       *gai_strerror(int);
-int               getaddrinfo(const char *restrict, const char *restrict,
-                      const struct addrinfo *restrict,
-                      struct addrinfo **restrict);
+int               getaddrinfo(const char *__restrict__, const char *__restrict__,
+                      const struct addrinfo *__restrict__,
+                      struct addrinfo **__restrict__);
 struct hostent   *gethostbyaddr(const void *, socklen_t, int);
 struct hostent   *gethostbyname(const char *);
 struct hostent   *gethostent(void);
-int               getnameinfo(const struct sockaddr *restrict, socklen_t,
-                      char *restrict, socklen_t, char *restrict,
+int               getnameinfo(const struct sockaddr *__restrict__, socklen_t,
+                      char *__restrict__, socklen_t, char *__restrict__,
                       socklen_t, int);
 struct netent    *getnetbyaddr(uint32_t, int);
 struct netent    *getnetbyname(const char *);

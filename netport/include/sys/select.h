@@ -33,10 +33,10 @@ typedef struct fd_set {
 	u8 fd_bits [(FD_SETSIZE+7)/8];
 } fd_set;
 
-int  pselect(int, fd_set *restrict, fd_set *restrict, fd_set *restrict,
-         const struct timespec *restrict, const sigset_t *restrict);
-int  select(int, fd_set *restrict, fd_set *restrict, fd_set *restrict,
-         struct timeval *restrict);
+int  pselect(int, fd_set *__restrict__, fd_set *__restrict__, fd_set *__restrict__,
+         const struct timespec *__restrict__, const sigset_t *__restrict__);
+int  select(int, fd_set *__restrict__, fd_set *__restrict__, fd_set *__restrict__,
+         struct timeval *__restrict__);
 
 #ifdef __cplusplus
 };
