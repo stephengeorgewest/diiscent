@@ -48,7 +48,7 @@ gnulib:
 	@echo "gnulib"
 	make -C gnulib
 	
-#descent: sdl_wii gl2gx 
+#descent: sdl_wii gl2gx netport
 descent:
 	@echo "descent"
 	make -C "D2X-XL"
