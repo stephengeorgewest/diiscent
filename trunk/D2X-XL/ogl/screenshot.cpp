@@ -24,11 +24,12 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-#ifdef __macosx__
+//wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL.h>
-#else
-# include <SDL.h>
-#endif
+//#else
+//# include <SDL.h>
+//#endif
 
 #include "descent.h"
 #include "ogl_defs.h"

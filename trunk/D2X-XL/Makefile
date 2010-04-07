@@ -10,16 +10,16 @@ endif
 include $(DEVKITPPC)/wii_rules
 
 GL2GX_DIR = $(CURDIR)/../gl2gx
-LIBOGG_DIR = $(CURDIR)/../../libogg
-LIBTHEORA_DIR = $(CURDIR)/../../libtheora
-LIBVORBIS_DIR = $(CURDIR)/../../libvorbis
-OPENAL_DIR = $(CURDIR)/../../openal-soft
-NETPORT_DIR = $(CURDIR)/../../netport
-GNULIB_DIR = $(CURDIR)/../../gnulib
+#LIBOGG_DIR = $(CURDIR)/../../libogg
+#LIBTHEORA_DIR = $(CURDIR)/../../libtheora
+#LIBVORBIS_DIR = $(CURDIR)/../../libvorbis
+#OPENAL_DIR = $(CURDIR)/../../openal-soft
+NETPORT_DIR = $(CURDIR)/../netport
+#GNULIB_DIR = $(CURDIR)/../../gnulib
 PROFILE_TOOLS_DIR = $(CURDIR)/../../profile_tools
-SDLPORT_DIR = $(CURDIR)/../sdl_wii/SDL
-SDL_mixer_DIR = $(CURDIR)/../sdl_wii/SDL_mixer
-MEMTRACER_DIR = $(CURDIR)/../../memtracer
+#SDLPORT_DIR = $(CURDIR)/../sdl_wii/SDL
+#SDL_mixer_DIR = $(CURDIR)/../sdl_wii/SDL_mixer
+#MEMTRACER_DIR = $(CURDIR)/../../memtracer
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -31,13 +31,13 @@ TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build-wii
 #SOURCES	:=	ogl 
 #SOURCES	:=	network
-SOURCES		:=	main audio 2d 3d ai audio cockpit console effects gameio gamemodes input io libmve lighting maths mem menus misc models objects physics render shaders weapons
+#SOURCES		:=	main audio 2d 3d ai audio cockpit console effects gameio gamemodes input io libmve lighting maths mem menus misc models objects ogl physics render shaders weapons
 #SOURCES	:=	main audio 2d 3d ai audio cockpit console effects gameio gamemodes input io libmve lighting maths mem menus misc models network objects ogl physics render shaders weapons
-#SOURCES	:=	main audio/linux 2d 3d ai audio cockpit console effects gameio gamemodes input io libmve lighting maths mem menus misc models network objects ogl physics render shaders weapons
+SOURCES	:=	main audio/linux 2d 3d ai audio cockpit console effects gameio gamemodes input io libmve lighting maths mem menus misc models network objects ogl physics render shaders weapons
 DATA		:=	data  
-INCLUDES	:= include src input/include network/linux/include
+INCLUDES	:= include src input/include network/linux/include 
 #DEPENDENCY_DIRS := $(SDLPORT_DIR) $(LIBOGG_DIR) $(LIBTHEORA_DIR) $(LIBVORBIS_DIR) $(OPENAL_DIR) $(NETPORT_DIR) $(GNULIB_DIR) $(PROFILE_TOOLS_DIR)/wiitrace/tracer/ $(MEMTRACER_DIR) 
-DEPENDENCY_DIRS := $(SDLPORT_DIR) $(SDL_mixer_DIRs)
+DEPENDENCY_DIRS := $(NETPORT_DIR) 
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -53,12 +53,12 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 #LIBS	:=	-lSDL_ttf -lSDL_gfx -lSDL_mixer -lSDL_image -lfreetype -ljpeg -lpng -lz -lSDL -lfat -lwiiuse -lbte -logc -lm -lwiikeyboard
 #LIBS	:=  -lSDL_mixer	-ltheora -lvorbis -logg -lopenal -lgl2gx -lmemtrace -ltrace -lz -lgnu -lnetport -lSDL -lfat -lwiiuse -lbte -logc -lm w -lstdc++
-LIBS	:=  -lSDL_mixer	-lSDL -lfat -lwiiuse -lbte -logc -lm
+LIBS	:=  -lSDL_mixer -lgl2gx -lnetport -lSDL -lfat -lwiiuse -lbte -logc -lm
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=
+LIBDIRS	:= $(NETPORT_DIR) 
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
