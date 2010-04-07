@@ -8,18 +8,18 @@
 #ifdef HAVE_CONFIG_H
 #include <conf.h>
 #endif
-
-#ifdef __macosx__
+//wii edit:
+//#ifdef __macosx__
 # include <SDL/SDL.h>
 # ifdef SDL_IMAGE
 #  include <SDL/SDL_image.h>
 # endif
-#else
-# include <SDL.h>
-# ifdef SDL_IMAGE
-#  include <SDL_image.h>
-# endif
-#endif
+//#else
+//# include <SDL.h>
+//# ifdef SDL_IMAGE
+//#  include <SDL_image.h>
+//# endif
+//#endif
 
 #include "descent.h"
 #include "ogl_defs.h"

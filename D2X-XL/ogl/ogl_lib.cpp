@@ -18,12 +18,13 @@
 #include <math.h>
 #include <fcntl.h>
 #include <stdio.h>
-#ifdef __macosx__
+//wii edit:
+//#ifdef __macosx__
 # include <stdlib.h>
 # include <SDL/SDL.h>
-#else
-# include <SDL.h>
-#endif
+//#else
+//# include <SDL.h>
+//#endif
 
 #include "descent.h"
 #include "error.h"

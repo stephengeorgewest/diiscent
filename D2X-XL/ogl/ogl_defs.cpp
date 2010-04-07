@@ -18,12 +18,12 @@
 #include <math.h>
 #include <fcntl.h>
 #include <stdio.h>
-#ifdef __macosx__
+//#ifdef __macosx__
 # include <stdlib.h>
 # include <SDL/SDL.h>
-#else
-# include <SDL.h>
-#endif
+//#else
+//# include <SDL.h>
+//#endif
 
 #include "descent.h"
 #include "ogl_defs.h"
@@ -254,7 +254,8 @@ else
 void COGL::SetupExtensions (void)
 {
 pszOglExtensions = reinterpret_cast<const char*> (glGetString (GL_EXTENSIONS));
-glewInit ();
+//wii edit: glew doesn't exist
+//glewInit ();
 SetupMultiTexturing ();
 SetupShaders ();
 SetupOcclusionQuery ();
