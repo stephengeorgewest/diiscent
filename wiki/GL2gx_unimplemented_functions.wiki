@@ -1,0 +1,46 @@
+#summary GL2gx un-implemented functions.
+
+=glext.h=
+
+==GL_VERSION_1_3==
+====GL_GLEXT_PROTOTYPES====
+  *`glActiveTexture'
+  *`glClientActiveTexture'
+
+==GL_VERSION_2_0==
+====GL_GLEXT_PROTOTYPES====
+  *`glDrawBuffers'
+
+==GL_ARB_shader_objects==
+====GL_GLEXT_PROTOTYPES====
+  *`glDeleteObjectARB'
+
+==GL_EXT_framebuffer_object==
+====GL_GLEXT_PROTOTYPES====
+  *`glBindFramebufferEXT'
+  *`glBindRenderbufferEXT'
+  *`glCheckFramebufferStatusEXT'
+  *`glDeleteFramebuffersEXT'
+  *`glDeleteRenderbuffersEXT'
+  *`glFramebufferRenderbufferEXT'
+  *`glFramebufferTexture2DEXT'
+  *`glGenFramebuffersEXT'
+  *`glGenRenderbuffersEXT'
+  *`glGenerateMipmapEXT'
+  *`glRenderbufferStorageEXT'
+
+=gl.h=
+  *`glDeleteLists' -- gl_calllist.c(commented out)
+  *`glDrawBuffer' -- doesn't exist
+
+=Version 1.2?=
+gl.h contains this
+  *#define GL_VERSION_1_1   1
+  *#define GL_VERSION_1_2   1
+gl_extensions.c contains this
+  *static const GLubyte vender[] = "gl2gx";
+  *static const GLubyte renderer[] = "gx";
+  *static const GLubyte version[] = "1.2";
+  *static const GLubyte extensions[] = "GL_EXT_texture_lod_bias\nGL_EXT_texture_filter_anisotropic\nGL_ARB_multitexture\nGL_EXT_texture_env_add\nGL_EXT_texture_env_combine\nGL_EXT_draw_range_elements\nGL_EXT_bgra";
+
+=Do I need to implement these other functions? or work around them?=
